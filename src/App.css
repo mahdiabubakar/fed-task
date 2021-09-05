@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+:root {
+  --primary-color: #0471ee;
+  --light-color: #f4f4f4;
+  --dark-color: #000;
+  --transparent-color: rgba(0, 0, 0, 0);
+  --opacity: 0.7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  /* position: absolute; */
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: url('./img/spaceship.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.home .icons {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.home .icons > div {
+  position: absolute;
+  top: 45vh;
+  width: 10px;
+  padding: 30px;
+}
+
+.home .icons > div.right {
+  position: absolute;
+  right: 0;
+}
+.home .icons > div.left {
+  position: absolute;
+  left: 0;
+}
+
+.home .icons > div a {
+  width: 100%;
+}
+
+.form-overlay {
+  position: absolute;
+  background: hsl(0, 0%, 90%);
+  width: 95vw;
+  height: 92vh;
+  display: grid;
+  /* justify-content: center; */
+  background: var(--primary-color);
+  grid-template-columns: 2fr 1fr;
+}
+
+.form-overlay > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-overlay > div.form-container {
+  position: relative;
+  background: var(--light-color);
+}
+
+.form-overlay > div.form-container div.top {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+}
+
+.form-overlay > div.form-container div.top p {
+  font-size: 0.8rem;
+  display: inline;
+}
+
+.form-overlay > div.form-container form {
+  height: 60%;
+  width: 40%;
+  display: grid;
+  z-index: 2;
+}
+
+.form-overlay > div.form-container form > div {
+  /* height: 50px; */
+  display: block;
+  padding: 0 10px;
+}
+
+.form-overlay > div.form-container form > div input {
+  display: block;
+  width: 100%;
+  padding: 13.5px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-overlay > div.form-container form > div select {
+  appearance: 10px;
+  display: block;
+  width: 100%;
+  padding: 13.5px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.form-overlay > div.text-container {
+  width: 100%;
+  height: 100%;
+}
+
+.form-overlay > div.text-container div {
+  width: 60%;
+  margin: auto;
+  /* background: red; */
+  height: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
 }
 
-.App-link {
-  color: #61dafb;
+.form-overlay > div.text-container div h1,
+.form-overlay > div.text-container div p {
+  color: var(--light-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-overlay > div.text-container div p {
+  font-size: 1.1rem;
 }
