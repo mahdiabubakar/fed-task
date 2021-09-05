@@ -16,12 +16,29 @@ const Modal = () => {
             </p>
           </div>
           <div>
-            <label>Your Name</label>
-            <input type='text' name='name' />
+            <input
+              type='text'
+              name='name'
+              className='Before-FS'
+              required=''
+              autocomplete='off'
+            />
+            <h1 class='Fs-H'>
+              <span>Your Name</span>
+            </h1>
+            <label class='placeholder'>Your Name</label>
           </div>
           <div>
-            <label>Email Address</label>
-            <input type='email' name='email' />
+            <input
+              type='password'
+              name='email'
+              className='Before-FS'
+              required=''
+            />
+            <h1 class='Fs-H'>
+              <span>Email Address</span>
+            </h1>
+            <label class='placeholder'>Email Address</label>
           </div>
           <div>
             <select name='job-title' defaultValue='user-type'>
@@ -33,8 +50,12 @@ const Modal = () => {
             </select>
           </div>
           <div>
-            <label>Password</label>
-            <input type='password' name='password' />
+            <input type='password' name='password' class='Before-FS' required />
+            <h1 class='Fs-H'>
+              <span>Password</span>
+            </h1>
+            <label class='placeholder'>Password</label>
+
             <span>Minimun of 8 charracters</span>
           </div>
           <div>
