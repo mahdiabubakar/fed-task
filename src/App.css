@@ -15,60 +15,17 @@
 }
 
 body {
-  /* position: absolute; */
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   font-size: 1rem;
 }
 
-.home {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  background: url('./img/spaceship.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-
-.home .icons {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-}
-
-.home .icons > div {
-  position: absolute;
-  top: 45vh;
-  width: 10px;
-  padding: 30px;
-}
-
-.home .icons > div.right {
-  position: absolute;
-  right: 0;
-}
-.home .icons > div.left {
-  position: absolute;
-  left: 0;
-}
-
-.home .icons > div a {
-  width: 100%;
-}
-
 .form-overlay {
   position: absolute;
   background: hsl(0, 0%, 90%);
-  width: 95vw;
-  height: 92vh;
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  /* justify-content: center; */
   background: var(--primary-color);
   grid-template-columns: 2fr 1fr;
 }
@@ -98,20 +55,19 @@ body {
   display: inline;
 }
 
-.form-overlay > div.form-container form {
+form {
   height: 60%;
   width: 40%;
   display: grid;
   z-index: 2;
 }
 
-.form-overlay > div.form-container form > div {
-  /* height: 50px; */
+form > div {
   display: block;
   padding: 0 10px;
 }
 
-.form-overlay > div.form-container form > div input {
+form > div input {
   display: block;
   width: 100%;
   padding: 13.5px;
@@ -120,9 +76,85 @@ body {
   border-radius: 3px;
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.1s;
 }
 
-.form-overlay > div.form-container form > div select {
+/* .Before-FS {
+  width: 344px;
+  border: 1px solid #c2c2c2;
+  border-radius: 3px;
+  height: 28px;
+  font-size: 16px;
+  margin: 1px 1px 0 1px;
+  padding: 13px 15px;
+} */
+
+form > div input:focus,
+form > div select:focus {
+  border: 1px solid var(--primary-color);
+  /* border-top: 1px solid transparent; */
+}
+
+.Fieldset > p {
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.Fieldset > p {
+  position: relative;
+  top: -47px;
+  font: 1em normal;
+  margin: -5px 2.5px -8px 10px;
+}
+
+.Fieldset > p > span {
+  float: left;
+  color: var(--primary-color);
+  font-size: 13px;
+}
+
+.Fieldset > p::before {
+  border-top: 1px solid var(--primary-color);
+  content: ' ';
+  float: left;
+  margin: 0.5em 2px 0 -1px;
+  width: 0.75em;
+}
+
+.Fieldset > p::after {
+  border-top: 1px solid var(--primary-color);
+  content: ' ';
+  display: block;
+  height: 1.5em;
+  left: 2px;
+  margin: 0 1px 0 0;
+  overflow: hidden;
+  position: relative;
+  top: 0.5em;
+}
+
+.placeholder {
+  position: relative;
+  left: 13px;
+  top: -47px;
+  color: #80868b;
+  font-weight: 400;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+input:focus ~ label.placeholder,
+input:valid ~ label.placeholder {
+  top: -60px;
+  font-size: 10px;
+  opacity: 0;
+}
+
+input:focus + .Fieldset > p {
+  opacity: 1;
+}
+
+form > div select {
   appearance: 10px;
   display: block;
   width: 100%;
@@ -142,7 +174,6 @@ body {
 .form-overlay > div.text-container div {
   width: 60%;
   margin: auto;
-  /* background: red; */
   height: 30%;
   display: flex;
   flex-direction: column;

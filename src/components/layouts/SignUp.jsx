@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Modal = () => {
+const SignUp = () => {
   return (
     <div className='form-overlay'>
       <div className='form-container'>
@@ -16,25 +16,45 @@ const Modal = () => {
             </p>
           </div>
           <div>
-            <label>Your Name</label>
-            <input type='text' name='name' />
+            <div class='Fieldset'>
+              <input type='text' class='input' required />
+              <p>
+                <span>Your name</span>
+              </p>
+              <label class='placeholder'>Your name</label>
+            </div>
           </div>
           <div>
-            <label>Email Address</label>
-            <input type='email' name='email' />
+            <div class='Fieldset'>
+              <input type='email' class='input' required />
+              <p>
+                <span>Email address</span>
+              </p>
+              <label class='placeholder'>Email address</label>
+            </div>
           </div>
           <div>
-            <select name='job-title' defaultValue='user-type'>
-              <option value='user-type' disabled>
-                I would describe my user type as
-              </option>
-              <option value='developer'>Developer</option>
-              <option value='teacher'>Teacher</option>
-            </select>
+            <div class='Fieldset'>
+              <select name='job-title' defaultValue='user-type' required>
+                <option value='user-type' disabled>
+                  I would describe my user type as
+                </option>
+                <option value='developer'>Developer</option>
+                <option value='teacher'>Teacher</option>
+              </select>
+              <p>
+                <span>I would describe my user type as</span>
+              </p>
+            </div>
           </div>
           <div>
-            <label>Password</label>
-            <input type='password' name='password' />
+            <div class='Fieldset'>
+              <input type='password' class='input' required />
+              <p>
+                <span>Password</span>
+              </p>
+              <label class='placeholder'>Password</label>
+            </div>
             <span>Minimun of 8 charracters</span>
           </div>
           <div>
@@ -63,4 +83,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default SignUp;
