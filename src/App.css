@@ -96,7 +96,7 @@ form > div select:focus {
 }
 
 .Fieldset > p {
-  opacity: 0;
+  /* opacity: 0; */
   transition: 0.2s;
 }
 
@@ -151,6 +151,10 @@ input:valid ~ label.placeholder {
 }
 
 input:focus + .Fieldset > p {
+  opacity: 1;
+}
+
+input:focus + .Fs-H {
   opacity: 1;
 }
 
