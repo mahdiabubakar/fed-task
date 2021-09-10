@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
+/* ROOT VARIABLE */
 :root {
   --primary-color: #0471ee;
-  --light-color: #f4f4f4;
+  --light-color: #e6e6e6;
   --dark-color: #000;
   --transparent-color: rgba(0, 0, 0, 0);
-  --opacity: 0.7;
+  --danger-color: #ff0000;
 }
 
 * {
@@ -20,9 +21,29 @@ body {
   font-size: 1rem;
 }
 
+/* COMMON */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.p-small {
+  font-size: 0.75rem;
+  color: #787a7c;
+}
+
+.error {
+  float: left;
+  margin-top: -5px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--danger-color);
+}
+
+/* FORM SECTION AND DUMMY SECTION */
 .form-overlay {
   position: absolute;
-  background: hsl(0, 0%, 90%);
+  background: #e6e6e6;
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -48,6 +69,20 @@ body {
   position: absolute;
   top: 30px;
   right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+/* PAGES (STEPS) */
+.form-overlay > div.form-container div.top i:first-child {
+  color: var(--dark-color);
+}
+
+.form-overlay > div.form-container div.top i {
+  font-size: 5px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  color: #afacac;
 }
 
 .form-overlay > div.form-container div.top p {
@@ -55,6 +90,7 @@ body {
   display: inline;
 }
 
+/* FORM STYLES */
 form {
   height: 60%;
   width: 40%;
@@ -67,6 +103,7 @@ form > div {
   padding: 0 10px;
 }
 
+/* ALL KINDS OF INPUT STYLES */
 form > div input {
   display: block;
   width: 100%;
@@ -79,50 +116,60 @@ form > div input {
   transition: 0.1s;
 }
 
-/* .Before-FS {
-  width: 344px;
-  border: 1px solid #c2c2c2;
-  border-radius: 3px;
-  height: 28px;
-  font-size: 16px;
-  margin: 1px 1px 0 1px;
-  padding: 13px 15px;
-} */
-
+/* FOCUS ON INPUT & SELECT */
 form > div input:focus,
 form > div select:focus {
   border: 1px solid var(--primary-color);
-  /* border-top: 1px solid transparent; */
 }
 
-.Fieldset > p {
-  /* opacity: 0; */
+.fieldset-p {
+  opacity: 0;
   transition: 0.2s;
 }
 
-.Fieldset > p {
+.fieldset {
   position: relative;
-  top: -47px;
-  font: 1em normal;
-  margin: -5px 2.5px -8px 10px;
 }
 
-.Fieldset > p > span {
-  float: left;
-  color: var(--primary-color);
+/* SHOW PASSWORD/EMAIL EYE */
+.show-hide {
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 1;
+  padding: 0 5px;
+}
+
+.show-hide i {
   font-size: 13px;
 }
 
-.Fieldset > p::before {
-  border-top: 1px solid var(--primary-color);
+/* CONTAINER FOR ALL INPUTS AND OTHERS */
+.fieldset > p {
+  position: relative;
+  top: -47px;
+  font: 1em normal;
+  margin: -5px 2.5px -8px -5px;
+}
+
+/* INPUT CAPTION LIKE GMAIL INPUT */
+.fieldset > p > span {
+  float: left;
+  color: var(--primary-color);
+  background: var(--light-color);
+  padding: 0 5px;
+  font-size: 13px;
+}
+
+.fieldset > p::before {
   content: ' ';
   float: left;
   margin: 0.5em 2px 0 -1px;
   width: 0.75em;
 }
 
-.Fieldset > p::after {
-  border-top: 1px solid var(--primary-color);
+.fieldset > p::after {
   content: ' ';
   display: block;
   height: 1.5em;
@@ -133,16 +180,19 @@ form > div select:focus {
   top: 0.5em;
 }
 
+/* THE TEXT THAT STANDS AS PLACEHOLDER */
 .placeholder {
   position: relative;
   left: 13px;
   top: -47px;
   color: #80868b;
   font-weight: 400;
+  display: inline-block;
   pointer-events: none;
-  transition: 0.4s;
+  transition: all 0.4s ease;
 }
 
+/* FUCOS/VALID STYLES */
 input:focus ~ label.placeholder,
 input:valid ~ label.placeholder {
   top: -60px;
@@ -150,14 +200,12 @@ input:valid ~ label.placeholder {
   opacity: 0;
 }
 
-input:focus + .Fieldset > p {
+/* SHOW PLACEHOLDER WHEN FOCUSED ON INPUT */
+input:focus + .fieldset-p {
   opacity: 1;
 }
 
-input:focus + .Fs-H {
-  opacity: 1;
-}
-
+/* SLELECT STYLES */
 form > div select {
   appearance: 10px;
   display: block;
@@ -170,6 +218,21 @@ form > div select {
   outline: none;
 }
 
+/* INPUT~SUBMIT STYLES */
+input[type='submit'] {
+  background: var(--primary-color);
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+/* SUBMIT DISABLED STYLES */
+input[type='submit']:disabled {
+  background: rgb(233, 232, 232);
+  color: var(--dark-color);
+  cursor: default;
+}
+
+/* SUMMY HEADING STYLES */
 .form-overlay > div.text-container {
   width: 100%;
   height: 100%;

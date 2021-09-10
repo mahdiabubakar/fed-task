@@ -5,6 +5,7 @@ import Home from './components/pages/Home';
 const App = () => {
   return (
     <Fragment>
+      {/* HOME COMPONENT RENDERING */}
       <Home />
     </Fragment>
   );
