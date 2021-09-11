@@ -1,12 +1,11 @@
 import { Fragment } from 'react';
 import './App.css';
-import Home from './components/pages/Home';
+import SignUp from './components/SignUp';
 
 const App = () => {
   return (
     <Fragment>
-      {/* HOME COMPONENT RENDERING */}
-      <Home />
+      <SignUp />
     </Fragment>
   );
 };
