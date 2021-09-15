@@ -116,6 +116,11 @@ form > div input {
   transition: 0.1s;
 }
 
+/* NAME INPUT STYLES */
+form > div input[type='text'] {
+  text-transform: capitalize;
+}
+
 /* FOCUS ON INPUT & SELECT */
 form > div input:focus,
 form > div select:focus {
